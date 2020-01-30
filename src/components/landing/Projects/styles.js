@@ -20,42 +20,68 @@ export const Grid = styled.div`
   }
 `;
 
-export const Item = styled.div`
-  width: 100%;
+export const ProjectCard = styled.div`
+  background: #fff;
   height: 100%;
-  overflow: hidden;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.11);
-
-  h4 {
-    color: #212121;
+  position: relative;
+  top: 0;
+  transition: all 0.25s ease 0s;
+  
+  &:hover {
+    top: -10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 16px;
   }
+`;
 
-  p {
-    color: #707070;
+export const Header = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+`;
+
+export const Title = styled.div`
+  font-weight: bold;
+  padding-top: 0.5rem;
+`;
+
+export const Year = styled.div`
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+  
+  span {
+    background-color: rgba(85, 176, 255, 0.1);
+    padding: 0.5rem 1.5rem 0.5rem 1rem;
+    clip-path: polygon(0px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%);
+  }
+`;
+
+export const ProjectLink = styled.div`
+  img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
   }
 `;
 
 export const Content = styled.div`
-  padding: 1rem 0;
-`;
-
-export const Stats = styled.div`
   display: flex;
   align-items: center;
+  padding: 0 0.5rem;
+`;
 
-  div {
-    display: flex;
-    &:first-child {
-      margin-right: 0.5rem;
-    }
+export const Description = styled.div`
+  width: calc(100% - 150px);
+  font-size: 0.9rem;
+`;
 
-    img {
-      margin: 0;
-    }
-
-    span {
-      color: #000;
-      margin-left: 0.5rem;
-    }
+export const Image = styled.div`
+  padding 0 2rem;
+  
+  img {
+    height: 150px;
+    margin-bottom: 0;
   }
 `;

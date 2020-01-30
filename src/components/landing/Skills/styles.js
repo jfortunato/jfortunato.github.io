@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import detailsIllustration from 'assets/illustrations/details.svg';
+import {Button} from '../../common/Button';
 
 export const Wrapper = styled.div`
   background-image: url(${detailsIllustration});
@@ -53,5 +54,11 @@ export const Thumbnail = styled.div`
 
   img {
     width: 100%;
+  }
+`;
+
+export const ButtonLink = styled(Button)`
+  a {
+    color: #fff;
   }
 `;
