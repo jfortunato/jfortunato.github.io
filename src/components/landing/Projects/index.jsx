@@ -1,5 +1,7 @@
 import React from 'react';
-import {Container} from 'components/common';
+import { Container } from 'components/common';
+import github from 'assets/icons/github.svg';
+import earth from 'assets/icons/earth.svg';
 import {
     Description,
     Grid,
@@ -12,6 +14,9 @@ import {
     Wrapper,
     Year
 } from './styles';
+import { projects } from './projects';
+
+projects.sort((a, b) => b.yearLaunched - a.yearLaunched);
 
 export const Projects = () => {
   return (
@@ -19,80 +24,27 @@ export const Projects = () => {
       <h2>Projects</h2>
 
         <Grid>
-            <ProjectCard>
-                <Header>
-                    <Title>Test Project</Title>
-                    <Year><span>2019</span></Year>
-                    <ProjectLink><img src="/icons/github.svg" alt="Source Code" title="View Source"/></ProjectLink>
-                    <ProjectLink><img src="/icons/stackoverflow.svg" alt="View Live Application" title="View Live Application"/></ProjectLink>
-                </Header>
-                <Content>
-                    <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut cum enim eum ipsum, iure officia perferendis quasi ratione recusandae!</Description>
-                    <Image><img src="/icons/telegram.svg" alt=""/></Image>
-                </Content>
-            </ProjectCard>
-            <ProjectCard>
-                <Header>
-                    <Title>Test Project</Title>
-                    <Year><span>2019</span></Year>
-                    <ProjectLink><img src="/icons/github.svg" alt="Source Code"/></ProjectLink>
-                    <ProjectLink><img src="/icons/stackoverflow.svg" alt="View Live Application"/></ProjectLink>
-                </Header>
-                <Content>
-                    <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut cum enim eum ipsum, iure officia perferendis quasi ratione recusandae!</Description>
-                    <Image><img src="/icons/telegram.svg" alt=""/></Image>
-                </Content>
-            </ProjectCard>
-            <ProjectCard>
-                <Header>
-                    <Title>Test Project</Title>
-                    <Year><span>2019</span></Year>
-                    <ProjectLink><img src="/icons/github.svg" alt="Source Code"/></ProjectLink>
-                    <ProjectLink><img src="/icons/stackoverflow.svg" alt="View Live Application"/></ProjectLink>
-                </Header>
-                <Content>
-                    <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut cum enim eum ipsum, iure officia perferendis quasi ratione recusandae!</Description>
-                    <Image><img src="/icons/telegram.svg" alt=""/></Image>
-                </Content>
-            </ProjectCard>
-            <ProjectCard>
-                <Header>
-                    <Title>Test Project</Title>
-                    <Year><span>2019</span></Year>
-                    <ProjectLink><img src="/icons/github.svg" alt="Source Code" title="View Source"/></ProjectLink>
-                    <ProjectLink><img src="/icons/stackoverflow.svg" alt="View Live Application" title="View Live Application"/></ProjectLink>
-                </Header>
-                <Content>
-                    <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut cum enim eum ipsum, iure officia perferendis quasi ratione recusandae!</Description>
-                    <Image><img src="/icons/telegram.svg" alt=""/></Image>
-                </Content>
-            </ProjectCard>
-            <ProjectCard>
-                <Header>
-                    <Title>Test Project</Title>
-                    <Year><span>2019</span></Year>
-                    <ProjectLink><img src="/icons/github.svg" alt="Source Code"/></ProjectLink>
-                    <ProjectLink><img src="/icons/stackoverflow.svg" alt="View Live Application"/></ProjectLink>
-                </Header>
-                <Content>
-                    <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut cum enim eum ipsum, iure officia perferendis quasi ratione recusandae!</Description>
-                    <Image><img src="/icons/telegram.svg" alt=""/></Image>
-                </Content>
-            </ProjectCard>
-            <ProjectCard>
-                <Header>
-                    <Title>Test Project</Title>
-                    <Year><span>2019</span></Year>
-                    <ProjectLink><img src="/icons/github.svg" alt="Source Code"/></ProjectLink>
-                    <ProjectLink><img src="/icons/stackoverflow.svg" alt="View Live Application"/></ProjectLink>
-                </Header>
-                <Content>
-                    <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut cum enim eum ipsum, iure officia perferendis quasi ratione recusandae!</Description>
-                    <Image><img src="/icons/telegram.svg" alt=""/></Image>
-                </Content>
-            </ProjectCard>
+            {projects.map((project) => (
+                <ProjectCard>
+                    <Header>
+                        <Title>{project.title}</Title>
+                        <Year><span>{project.yearLaunched}</span></Year>
+                        { project.sourceLink &&
+                        <ProjectLink><a href={project.sourceLink} target="_blank" rel="noopener noreferrer"><img src={github} alt="View Source Code" title="View Source Code"/></a></ProjectLink>
+                        }
+                        { project.viewLink &&
+                        <ProjectLink><a href={project.viewLink} target="_blank" rel="noopener noreferrer"><img src={earth} alt="View Live Application" title="View Live Application"/></a></ProjectLink>
+                        }
+                    </Header>
+                    <Content>
+                        <Description>{project.description}</Description>
+                        { project.logo &&
+                        <Image><img src={project.logo} alt=""/></Image>
+                        }
+                    </Content>
+                </ProjectCard>
+            ))}
         </Grid>
-
 </Wrapper>
   )
 }

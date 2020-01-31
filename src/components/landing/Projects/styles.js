@@ -69,7 +69,7 @@ export const ProjectLink = styled.div`
 export const Content = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 0.5rem;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
 `;
 
 export const Description = styled.div`
@@ -81,7 +81,7 @@ export const Image = styled.div`
   padding 0 2rem;
   
   img {
-    height: 150px;
     margin-bottom: 0;
+    max-width: 150px;
   }
 `;

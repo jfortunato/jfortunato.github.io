@@ -13,7 +13,7 @@ export const Skills = () => (
       <Details>
         <h1>About Me</h1>
         <p>
-          I'm a full stack developer with experience working in many areas of a web project including frontend development, backend development, devops & server administration.
+          I'm a full stack developer with experience working in many areas of a web project including frontend development, backend development, DevOps & server administration.
         </p>
         <ButtonLink>
           <a href={resume} rel="noopener noreferrer" target="_blank">Resume</a>
