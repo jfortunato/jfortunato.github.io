@@ -8,7 +8,7 @@ module.exports = {
   socialLinks: {
     github: 'https://github.com/jfortunato',
   },
-  googleAnalyticsID: 'UA-88875900-4',
+  googleAnalyticsID: 'UA-22673798-10',
   themeColor: '#6b63ff',
   backgroundColor: '#6b63ff',
   social: {
