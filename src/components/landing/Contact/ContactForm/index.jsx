@@ -16,9 +16,6 @@ const ContactForm = ({
 	<Form
 		name="portfolio-dev"
 		method="post"
-		data-netlify="true"
-		data-netlify-recaptcha="true"
-		data-netlify-honeypot="bot-field"
 	>
 		<InputField>
 			<Input
@@ -117,11 +114,10 @@ export default withFormik({
 					)
 					.join('&')
 			}
-			await fetch('/?no-cache=1', {
+			await fetch('https://formspree.io/xjvwgvbq', {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
 				body: encode({
-					'form-name': 'portfolio-dev',
 					name,
 					email,
 					message,
