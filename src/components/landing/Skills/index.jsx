@@ -15,9 +15,6 @@ export const Skills = () => (
         <p>
           I'm a full stack developer with experience working in many areas of a web project including frontend development, backend development, DevOps & server administration.
         </p>
-        <ButtonLink>
-          <a href={resume} rel="noopener noreferrer" target="_blank">Resume</a>
-        </ButtonLink>
       </Details>
     </SkillsWrapper>
   </Wrapper>
