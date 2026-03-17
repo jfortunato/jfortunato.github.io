@@ -1,0 +1,4 @@
+<picture>
+  <source srcset="{{ (.resource.Process "webp").RelPermalink }}" type="image/webp">
+  <img src="{{ .resource.RelPermalink }}" width="{{ .resource.Width }}" height="{{ .resource.Height }}" alt="{{ .alt }}" loading="lazy">
+</picture>

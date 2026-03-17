@@ -1,4 +1,55 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://jfortunato.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Justin Fortunato | Full Stack Software Developer'
 theme = 'github.com/gokarna-theme/gokarna-hugo'
+enableRobotsTXT = true
+
+[params]
+  brandTitle = "Justin Fortunato"
+  avatarURL = "/images/me.jpg"
+  description = "Full Stack Software Developer"
+  footer = "Justin Fortunato"
+
+  socialIcons = [
+    {name = "github", url = "https://github.com/jfortunato"},
+    {name = "stackoverflow", url = "https://stackoverflow.com/users/813181/jfortunato"},
+    {name = "email", url = "mailto:developer@jfortunato.com"},
+    {name = "buymeacoffee", url = "https://buymeacoffee.com/jfortunato"},
+  ]
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "<span data-feather='home'></span>"
+    url = "/"
+    weight = 1
+
+  #[[menu.main]]
+  #  name = "Posts"
+  #  pre = "<span data-feather='book'></span>"
+  #  url = "/posts/"
+  #  weight = 2
+
+  [[menu.main]]
+    name = "Projects"
+    pre = "<span data-feather='code'></span>"
+    url = "/projects/"
+    weight = 3
+
+  #[[menu.main]]
+  #  name = "Tags"
+  #  pre = "<span data-feather='tag'></span>"
+  #  url = "/tags/"
+  #  weight = 4
+
+  [[menu.main]]
+    identifier = "github"
+    pre = "<span data-feather='github'></span>"
+    url = "https://github.com/jfortunato"
+    weight = 5
+
+  [[menu.main]]
+    identifier = "buymeacoffee"
+    pre = "<span data-feather='coffee'></span>"
+    url = "https://buymeacoffee.com/jfortunato"
+    weight = 6

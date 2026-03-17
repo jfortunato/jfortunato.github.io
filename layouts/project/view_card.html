@@ -1,0 +1,29 @@
+<div class="project-card">
+  <div class="project-card__header">
+    <div class="project-card__title">{{- .Title -}}</div>
+    <div class="project-card__year-started"><span>{{- .Params.yearStarted -}}</span></div>
+    {{ if .Params.repo }}
+    <div class="project-card__repo">
+      <a href="{{ .Params.repo }}" target="_blank" rel="noopener noreferrer">
+        <img src="/images/github.svg" alt="View Source Code" title="View Source Code">
+      </a>
+    </div>
+    {{ end }}
+    {{ if .Params.website }}
+    <div class="project-card__website">
+      <a href="{{ .Params.website }}" target="_blank" rel="noopener noreferrer">
+        <img src="/images/earth.svg" alt="View Live Application" title="View Live Application">
+      </a>
+    </div>
+    {{ end }}
+  </div>
+  <div class="project-card__content">
+    <div class="project-card__description">{{- .Summary -}}</div>
+    {{ $logo := .Resources.Get "logo" }}
+    {{ if $logo }}
+    <div class="project-card__image">
+      {{ partial "picture.html" (dict "resource" $logo "alt" (printf "%s logo" .Title)) }}
+    </div>
+    {{ end }}
+  </div>
+</div>
