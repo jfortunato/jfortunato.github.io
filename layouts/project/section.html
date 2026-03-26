@@ -10,7 +10,7 @@
     </div>
 
     <div class="grid">
-    {{ range where .Site.RegularPages "Type" "project" }}
+    {{ range ((where .Site.RegularPages "Params.type" "project").ByParam "yearStarted").Reverse }}
         {{ .Render "view_card" }}
     {{ end }}
     </div>
