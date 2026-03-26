@@ -5,6 +5,10 @@ theme = 'github.com/gokarna-theme/gokarna-hugo'
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term", "rss"]
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [params]
   brandTitle = "Justin Fortunato"
   brandTagline = "Full Stack Software Developer"
