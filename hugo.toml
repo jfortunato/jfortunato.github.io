@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'Justin Fortunato | Full Stack Software Developer'
 theme = 'github.com/gokarna-theme/gokarna-hugo'
 enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "rss"]
 
 [params]
   brandTitle = "Justin Fortunato"
